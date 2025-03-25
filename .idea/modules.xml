@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/machine_vision_in_ebsocket.iml" filepath="$PROJECT_DIR$/.idea/machine_vision_in_ebsocket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/machine_vision_in_websocket.iml" filepath="$PROJECT_DIR$/.idea/machine_vision_in_websocket.iml" />
     </modules>
   </component>
 </project>
