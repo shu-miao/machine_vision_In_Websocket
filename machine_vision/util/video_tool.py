@@ -29,16 +29,22 @@ class VideoStream:
             grabbed, frame = self.stream.read()
             if grabbed:
                 self.frame = frame
-                if len(self.frames) >= self.max_frames: # 如果当前累积帧超过最大值
-                    try:
-                        self.frames.popleft() # 抛弃最旧的帧
-                    except Exception as e:
-                        logging.info(f'移除旧帧失败，error：{e}')
-                    self.frames.append((time.time(),frame)) # 累积新帧
-                else:
-                    self.frames.append((time.time(),frame)) # 累积新帧
             else:
                 continue
+
+    def add_frame(self,frame):
+        '''
+        :param frame: 需要累积的帧
+        '''
+        if len(self.frames) >= self.max_frames:
+            # 若缓存池中帧数量大于最大值
+            try:
+                self.frames.popleft() # 删除最旧的帧
+            except Exception as e:
+                logging.info('移除旧帧失败，error:',e)
+            self.frames.append((time.time(),frame)) # 添加新帧
+        else:
+            self.frames.append((time.time(),frame)) # 添加新帧
 
     def read(self):
         # 取当前帧

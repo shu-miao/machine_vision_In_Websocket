@@ -1,0 +1,14 @@
+# 模型路径
+model_path: './file/model/FSDS4.0.pt'
+# 图片保存路径
+frame_path: './file/images/'
+# 视频保存路径
+video_path: './file/video/'
+# 类别列表
+class_dict: {'0.0':'smoke','1.0':'fire',}
+# 最大连续检测阈值
+detection_threshold: 12
+# 最大置信度阈值
+conf_threshold: 0.6
+# 最大同时任务数
+max_workers: 15
